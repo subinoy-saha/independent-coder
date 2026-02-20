@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main() {
-   //==============================square(nxn)=============================================
+//   ==============================square(nxn)=============================================
    int i, j, k;
    printf("enter input for nxn: ");
    scanf("%d", &k);
@@ -14,7 +14,7 @@ int main() {
     }
     printf("\n");
 
-    //=============================inverted================================================
+    //==================================inverted============================================
     int l, m, n;
     printf("enter number: ");
     scanf("%d", &n);
@@ -27,20 +27,20 @@ int main() {
             }
             printf("\n");
             
-    //================================inverted==============================================
+    //====================================inverted=========================================
     int i, j, n;
     printf("enter number: ");
     scanf("%d", &n);
 
-    for(i=-1; i<=n; i++) {
-        for(j=i+2; j<=n; j++) {
+    for(i=1; i<=n; i++) {
+        for(j=i; j<=n; j++) {
             printf("*");
         }
         printf("\n");
     }
     printf("\n");
 
-    //====================================centered==========================================
+ //====================================centered==========================================
     int i, j, k, n;
     printf("enter number: ");
     scanf("%d", &n);
@@ -56,7 +56,7 @@ int main() {
     }
     printf("\n");
     
-    //========================================number pattern===============================
+  //========================================number pattern===============================
     int i, j, n;
     printf("enter number: ");
     scanf("%d", &n);
@@ -90,26 +90,39 @@ int main() {
         if (i%7 == 0 && i%13 == 0) {
             break;
         }
-        else{
-            continue;
-        }
+        // else{
+        //     continue;
+        // }
 
     }
     printf("the number is: %d", i);
     printf("\n");
     
     //============all prime numbers between 1 and 50 (use break or continue)=============
-    int i;
-    printf("all prime numbers are: ");
-    for (i=1; i<=50; i++) {
-        if(i%i == 0){
-            printf(" %d, ", i);
+
+    int num, i;
+
+    printf("Prime numbers from 1 to 50 are:\n");
+
+    for (num = 2; num <= 50; num++) {
+        int isPrime = 1; 
+
+        for (i = 2; i * i <= num ; i++) {
+            if (num % i == 0) {
+                isPrime = 0; 
+                break;       
+            }
         }
-        else{
-            continue;
+
+        if (!isPrime) {
+            continue; 
         }
+
+        printf("%d ", num); 
     }
+
     printf("\n");
+
 
     //=sum of positive numbers only from an array; stop if you encounter -1 (use break)=
     printf("--- Section 3: For Loop - Array Summation ---\n");
